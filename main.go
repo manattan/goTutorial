@@ -6,13 +6,16 @@ import "fmt"
 // 	return y, x
 // }
 
-func split(sum int) (a, b int) {
-	a = sum * 4 / 9
-	b = sum - a
-	return
-}
+// func split(sum int) (a, b int) {
+// 	a = sum * 4 / 9
+// 	b = sum - a
+// 	return
+// }
+
+var c, Python, Java bool
 
 func main() {
 	// a, b := swap("Hello", "World")
-	fmt.Println(split(18))
+	var i int
+	fmt.Println(i, c, Python, Java)
 }
