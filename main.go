@@ -6,8 +6,7 @@ import (
 )
 
 type Vertex struct {
-	X int
-	Y int
+	X, Y int
 }
 
 // func swap(x, y string) (string, string) {
@@ -45,6 +44,13 @@ func sqrt22(x float64) float64 {
 	}
 	return z
 }
+
+var (
+	v1 = Vertex{1, 2}
+	v2 = Vertex{X: 1}
+	v3 = Vertex{}
+	p  = &Vertex{1, 2}
+)
 
 func main() {
 	// a, b := swap("Hello", "World")
@@ -89,8 +95,15 @@ func main() {
 	// *p = *p / 37
 	// fmt.Println(j)
 
-	v := Vertex{1, 2}
-	v.X = 4
-	fmt.Println(v)
-	fmt.Println(v.X)
+	// v := Vertex{1, 2}
+	// v.X = 4
+	// fmt.Println(v)
+	// fmt.Println(v.X)
+
+	// v := Vertex{1, 2}
+	// p := &v
+	// (*p).X = 1e9
+	// fmt.Println(v)
+
+	fmt.Println(v1, p, v2, v3)
 }
