@@ -3,6 +3,9 @@ package main
 import (
 	"fmt"
 	"math"
+	"strings"
+
+	"golang.org/x/tour/wc"
 )
 
 type Vertex struct {
@@ -52,8 +55,25 @@ var (
 	p  = &Vertex{1, 2}
 )
 
+var fl = []int{1, 2, 4, 8, 16, 32, 64, 128}
+var m map[string]Vertex
+
 func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+}
+
+func WordCount(s string) map[string]int {
+	res := make(map[string]int)
+	arr := strings.Fields(s)
+	for i := 0; i < len(arr); i++ {
+		_, ok := res[arr[i]]
+		if ok {
+			res[arr[i]] += 1
+		} else {
+			res[arr[i]] = 1
+		}
+	}
+	return res
 }
 
 func main() {
@@ -143,19 +163,53 @@ func main() {
 	// if s == nil {
 	// 	fmt.Println("nil!")
 	// }
-	board := [][]string{
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
-	}
 
-	board[0][0] = "X"
-	board[2][2] = "O"
-	board[1][2] = "X"
-	board[1][0] = "O"
-	board[0][2] = "O"
+	// board := [][]string{
+	// 	[]string{"_", "_", "_"},
+	// 	[]string{"_", "_", "_"},
+	// 	[]string{"_", "_", "_"},
+	// }
 
-	for i := 0; i < len(board); i++ {
-		fmt.Printf("%s\n", board[i])
-	}
+	// board[0][0] = "X"
+	// board[2][2] = "O"
+	// board[1][2] = "X"
+	// board[1][0] = "O"
+	// board[0][2] = "O"
+
+	// for i := 0; i < len(board); i++ {
+	// 	fmt.Printf("%s\n", board[i])
+	// }
+
+	// var s []int
+	// printSlice(s)
+	// s = append(s, 1)
+	// printSlice(s)
+	// s = append(s, 2, 3, 4)
+	// printSlice(s)
+
+	// for i, j := range fl {
+	// 	fmt.Printf("2の%d乗は%dです\n", i, j)
+	// }
+
+	// ali := make([]int, 10)
+	// for i := range ali {
+	// 	ali[i] = 1 << uint(i)
+	// }
+	// for _, value := range ali {
+	// 	fmt.Println(value)
+	// }
+
+	// m = make(map[string]Vertex)
+	// m["Bell Labs"] = Vertex{40, 20}
+	// fmt.Println(m["Bell Labs"])
+
+	// jk := make(map[string]int)
+	// jk["Answer"] = 42
+	// fmt.Println("The value: ", jk["Answer"])
+	// jk["Answer"] = 48
+	// fmt.Println("The value: ", jk["Answer"])
+	// v, ok := jk["Answer"]
+	// fmt.Println("The value: ", v, "Present?", ok)
+
+	wc.Test(WordCount)
 }
