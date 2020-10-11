@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math"
-	"runtime"
 )
 
 // func swap(x, y string) (string, string) {
@@ -60,11 +59,28 @@ func main() {
 	// fmt.Println(sqrt(2), sqrt(-4))
 	// fmt.Println(pow(3, 2, 10), pow(3, 3, 20))
 	// fmt.Println(sqrt22(3))
-	fmt.Print("Go runs on ...")
-	switch os := runtime.GOOS; os {
-	case "Linux":
-		fmt.Println("Linux.")
-	default:
-		fmt.Printf("%s.\n", os)
-	}
+
+	// fmt.Print("Go runs on ...")
+	// switch os := runtime.GOOS; os {
+	// case "Linux":
+	// 	fmt.Println("Linux.")
+	// default:
+	// 	fmt.Printf("%s.\n", os)
+	// }
+
+	// fmt.Println("counting")
+	// for i := 0; i < 10; i++ {
+	// 	defer fmt.Println(i)
+	// }
+	// fmt.Println("done")
+
+	i, j := 42, 2701
+	p := &i
+	fmt.Println(*p)
+	*p = 21
+	fmt.Println(i)
+
+	p = &j
+	*p = *p / 37
+	fmt.Println(j)
 }
