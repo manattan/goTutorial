@@ -5,6 +5,11 @@ import (
 	"math"
 )
 
+type Vertex struct {
+	X int
+	Y int
+}
+
 // func swap(x, y string) (string, string) {
 // 	return y, x
 // }
@@ -74,13 +79,18 @@ func main() {
 	// }
 	// fmt.Println("done")
 
-	i, j := 42, 2701
-	p := &i
-	fmt.Println(*p)
-	*p = 21
-	fmt.Println(i)
+	// i, j := 42, 2701
+	// p := &i
+	// fmt.Println(*p)
+	// *p = 21
+	// fmt.Println(i)
 
-	p = &j
-	*p = *p / 37
-	fmt.Println(j)
+	// p = &j
+	// *p = *p / 37
+	// fmt.Println(j)
+
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v)
+	fmt.Println(v.X)
 }
