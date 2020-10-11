@@ -52,6 +52,10 @@ var (
 	p  = &Vertex{1, 2}
 )
 
+func printSlice(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+}
+
 func main() {
 	// a, b := swap("Hello", "World")
 	// var i int
@@ -105,5 +109,53 @@ func main() {
 	// (*p).X = 1e9
 	// fmt.Println(v)
 
-	fmt.Println(v1, p, v2, v3)
+	// fmt.Println(v1, p, v2, v3)
+
+	// var a [2]string
+	// a[0] = "hello"
+	// a[1] = "world"
+	// fmt.Println(a[0], a[1])
+	// fmt.Println(a)
+
+	// primes := [6]int{1, 2, 3, 5, 5, 2}
+	// fmt.Println(primes)
+
+	// primes := [6]int{2, 3, 5, 8, 13, 21}
+	// var s []int = primes[:4]
+	// fmt.Println(s)
+	// s := []int{2, 3, 5, 7, 11, 13}
+	// printSlice(s)
+
+	// // Slice the slice to give it zero length.
+	// s = s[:0]
+	// printSlice(s)
+
+	// // Extend its length.
+	// s = s[:4]
+	// printSlice(s)
+
+	// // Drop its first two values.
+	// s = s[2:]
+	// printSlice(s)
+
+	// var s []int
+	// fmt.Println(s, len(s), cap(s))
+	// if s == nil {
+	// 	fmt.Println("nil!")
+	// }
+	board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+
+	board[0][0] = "X"
+	board[2][2] = "O"
+	board[1][2] = "X"
+	board[1][0] = "O"
+	board[0][2] = "O"
+
+	for i := 0; i < len(board); i++ {
+		fmt.Printf("%s\n", board[i])
+	}
 }
