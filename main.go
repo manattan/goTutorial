@@ -58,9 +58,9 @@ var (
 var fl = []int{1, 2, 4, 8, 16, 32, 64, 128}
 var m map[string]Vertex
 
-func printSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
-}
+// func printSlice(s []int) {
+// 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+// }
 
 func WordCount(s string) map[string]int {
 	res := make(map[string]int)
